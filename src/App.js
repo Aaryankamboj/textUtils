@@ -45,13 +45,13 @@ function App() {
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
       showAlert("Dark Mode has been enabled", "success")
       document.title = "TextUtils - Dark Mode";
       setText('Light');
     //   setInterval(() => {
     //     document.title = "TextUtils is amazing";
     //   }, 2000);
-
     //   setInterval(() => {
     //     document.title = "TextUtils download karo";
     //   }, 1500);
@@ -59,34 +59,34 @@ function App() {
     else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
       showAlert("Light Mode has been enabled", "success");
       document.title = "TextUtils - Light Mode";
-
       setText("Dark");
     }
   }
 
 
   const [text2, setText2] = useState("light");
-  const [noBlue, toBlue] = useState("light");
-  const toggleBlue = () => {
-    if (noBlue === 'blue') {
-      toBlue('light');
-      document.body.style.backgroundColor = 'white';
-      setText2("Blue")
-      // showAlert("Blue Mode has been enabled", "success");
-    }
-    else {
-      toBlue('#85aae1');
-      document.body.style.backgroundColor = '#85aae1';
-      setText2("Light");
-      // showAlert("Blue Mode has been disabled", "warning");
-    }
-  }
+  // const [noBlue, toBlue] = useState("light");/
+  // const toggleBlue = () => {
+  //   if (noBlue === 'blue') {
+  //     toBlue('light');
+  //     document.body.style.backgroundColor = 'white';
+  //     setText2("Blue")
+  //     // showAlert("Blue Mode has been enabled", "success");
+  //   }
+  //   else {
+  //     toBlue('#85aae1');
+  //     document.body.style.backgroundColor = '#85aae1';
+  //     setText2("Light");
+  //     // showAlert("Blue Mode has been disabled", "warning");
+  //   }
+  // }
   return (
     <>
       {/* <Router> */}
-        <Navbar title="TextUtils" aboutText="AboutTextUtils" mode={mode} noBlue={noBlue} text={text} text2={text2} toggleMode={toggleMode} toggleBlue={toggleBlue} />
+        <Navbar title="TextUtils" aboutText="AboutTextUtils" mode={mode} text={text} text2={text2} toggleMode={toggleMode} />
         <Alert alert={alert} mode={mode} />
         {/* <Navbar/> */}
         <div className="container my-3">

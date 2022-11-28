@@ -71,7 +71,8 @@ export default function TextForm(props) {
     
     return (
         <>
-            <div className={`container text-${props.mode==='light'?'black':'light'}`}>
+            {/* <div className={`container text-${props.mode==='light'?'black':'light'}`}> */}
+            <div className="container">
                 <h1>{props.heading} </h1>
                 <div className="mb-3">
                     <textarea value={text} class="form-control" onChange={handleOnchange} id="myBox" rows="8"></textarea>
@@ -83,13 +84,14 @@ export default function TextForm(props) {
                 {/* <button className="btn btn-primary mx-2" onClick={handlePhoneNumbers}> Filter Phone Numbers</button> */}
             </div>
 
-            <div className={`container my-2 text-${props.mode==='light'?'black':'light'}`}>
+            {/* <div className={`container my-2 text-${props.mode==='light'?'black':'light'}`}> */}
+            <div className="container">
+
                 <h2>Your text summary </h2>
                 <p> <b>{text.split(" ").length-1}</b> Words and <b> {text.length} </b> characters </p>
                 <p> {0.008 * text.split(" ").length } Minutes Read </p>
                 <h2>Preview</h2>
-                <p> {text}</p>
-                
+                <p> {text}</p>                
             </div>
         </>
     )
